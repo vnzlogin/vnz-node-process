@@ -1,4 +1,4 @@
-# node-node-process-windows
+# node-vnz-node-process
 ###### Manage application windows via a Node API - set focus, cycle active windows, and get active windows
 
 - [Installation](#Installation)
@@ -13,7 +13,7 @@
 Requires Node 4+
 
 ```
-    npm install node-process-windows
+    npm install vnz-node-process
 ```
 
 ### Supported Platforms
@@ -27,7 +27,7 @@ Pull requests are welcome - it would be great to have this API work cross-platfo
 1) Get active processes
 
 ```javascript
-    var processWindows = require("node-process-windows");
+    var processWindows = require("vnz-node-process");
 
     var activeProcesses = processWindows.getProcesses(function(err, processes) {
         processes.forEach(function (p) {
@@ -41,7 +41,7 @@ Pull requests are welcome - it would be great to have this API work cross-platfo
 2) Focus a window
 
 ```javascript
-    var processWindows = require("node-process-windows");
+    var processWindows = require("vnz-node-process");
 
     // Focus window by process...
     var activeProcesses = processWindows.getProcesses(function(err, processes) {
@@ -60,7 +60,7 @@ Pull requests are welcome - it would be great to have this API work cross-platfo
 3) Get active window
 
 ```javascript
-    var processWindows = require("node-process-windows");
+    var processWindows = require("vnz-node-process");
 
     var currentActiveWindow = processWindows.getActiveWindow((err, processInfo) => {
         console.log("Active window title: " + processInfo.mainWindowTitle);
