@@ -77,4 +77,4 @@ Pull requests are welcome
 
 ## Contact
 
-extr0py@extropygames.com
+support@vnzlogin.com
