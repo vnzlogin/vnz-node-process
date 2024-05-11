@@ -1,6 +1,6 @@
 {
   "name": "vnz-node-process",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "View information about running processes, get the active process window, or activate a process's main window.",
   "main": "index.js",
   "dependencies": {},

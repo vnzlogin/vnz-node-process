@@ -87,6 +87,16 @@ var vnz = {
         });
     },
 
+    GetModuleHandle(callback) {
+        callback = callback || noop;
+
+        if (!isWindows) {
+            callback("Non-Windows platforms are currently not supported");
+        }
+
+        this.executeProcess("--getmodule", callback);
+    },
+
     /**
      * Helper method to execute the C# process that wraps the native focus / window APIs
      */
