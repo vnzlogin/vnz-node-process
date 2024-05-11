@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 
 namespace windows_console_app
 {
@@ -26,6 +27,8 @@ namespace windows_console_app
 
     class Program
     {
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr GetModuleHandle(string lpModuleName);
         static void Main(string[] args)
         {
 
@@ -52,6 +55,13 @@ namespace windows_console_app
 
                         FocusHandler.SwitchToWindow(Int32.Parse(args[1]));
                         output.Result = true;
+                        break;
+                    case "--getmodule":
+                        using (Process curProcess = Process.GetCurrentProcess())
+                        using (ProcessModule curModule = curProcess.MainModule)
+                        {
+                            output.Result = GetModuleHandle(curModule.ModuleName);
+                        }
                         break;
                     default:
                         throw new ArgumentException("Unknonw argument: " + argument);
