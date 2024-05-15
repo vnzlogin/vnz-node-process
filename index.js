@@ -103,7 +103,7 @@ var vnz = {
     executeProcess(arg, callback, mapper) {
         callback = callback || noop;
         if(!this.windowsFocusManagementBinary) this.windowsFocusManagementBinary = this.windowsFocusManagementBinaryDefault
-        exec("'" + this.windowsFocusManagementBinary + "' " + arg, (error, stdout, stderr) => {
+        exec("\"" + this.windowsFocusManagementBinary + "\" " + arg, (error, stdout, stderr) => {
             if (error) {
                 callback(error, null);
                 return;
